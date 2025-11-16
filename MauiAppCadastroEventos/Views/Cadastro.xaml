@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppCadastroEventos.Views.Cadastro"
+             Title="Cadastro"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <VerticalStackLayout>
+            <Label Text="Cadasto Eventos" TextColor="Purple" FontSize="40" HorizontalOptions="Center"/>
+            <Frame Margin="10" BorderColor="DarkGray">
+                <VerticalStackLayout Spacing="10">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Nome do Evento:"/>
+                        <Entry Placeholder="Nome" x:Name="nome_evento"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Quantidade De Participantes:"/>
+                        <HorizontalStackLayout Spacing="30">
+                            <Label Text="{Binding Value}" TextColor="Purple" BindingContext="{Reference stp_pessoas}"/>
+                            <Stepper x:Name="stp_pessoas" Minimum="1" Maximum="20" Increment="1"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Label Text="Local Do Evento:"/>
+                        <Picker x:Name="pkr_Local" ItemDisplayBinding="{Binding Local}"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Frame Margin="10" Padding="0" BorderColor="DarkGray">
+                            <HorizontalStackLayout Spacing="10">
+                                <HorizontalStackLayout Spacing="10" Padding="10">
+                                    <Label Text="Data de inicio:"/>
+                                    <DatePicker x:Name="dt_pkr_inicio"/>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="10" Padding="10">
+                                    <Label Text="Data de Término:"/>
+                                    <DatePicker x:Name="dt_pkr_final"/>
+                                </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+            <Button Text="Finalizar Cadastro" WidthRequest="300" Clicked="Button_Clicked"/>
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

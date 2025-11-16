@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppCadastroEventos.Views.Resultado"
+             Title="Resultado"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+        <VerticalStackLayout>
+            <Label Text="Resumo do Cadastro" TextColor="Purple" FontSize="40" HorizontalOptions="Center"/>
+            <Frame Margin="10" Padding="10" BorderColor="DarkGray">
+                <VerticalStackLayout Spacing="40" Padding="10">
+                    <HorizontalStackLayout Spacing="20">
+                        <Label Text="Nome do Evento:"/>
+                        <Label Text="{Binding Nome}" TextColor="Purple"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="20">
+                        <Label Text="Quantidade de Participantes:"/>
+                        <Label Text="{Binding QtdPessoas}" TextColor="Purple"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="20">
+                        <Label Text="Local do Evento"/>
+                        <Label Text="{Binding Localselecionado.Local}" TextColor="Purple"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="20">
+                        <Label Text="Data de Inicio"/>
+                        <Label Text="{Binding DataInicial, StringFormat='{}{0:dd/mm/yyyy}'}" TextColor="Purple"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="20">
+                        <Label Text="Data de Término:"/>
+                        <Label Text="{Binding DataFinal, StringFormat='{}{0:dd/mm/yyyy}'}" TextColor="Purple"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="20">
+                        <Label Text="Estadia:"/>
+                        <Label Text="{Binding Estadia}" TextColor="Purple"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="20">
+                        <Label Text="Custo Total:"/>
+                        <Label Text="{Binding ValorTotal}" TextColor="Purple"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>    
+            </Frame>
+            <Button Text="Voltar" WidthRequest="300" Clicked="btn_voltar"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+        
